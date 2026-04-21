@@ -1,0 +1,57 @@
+{
+  "name": "PhotoSession",
+  "type": "object",
+  "properties": {
+    "original_url": {
+      "type": "string",
+      "description": "URL of the original uploaded photo"
+    },
+    "processed_url": {
+      "type": "string",
+      "description": "URL of the processed photo"
+    },
+    "format": {
+      "type": "string",
+      "enum": [
+        "1x1_id",
+        "2x2_id",
+        "passport",
+        "resume",
+        "profile"
+      ],
+      "default": "passport",
+      "description": "Selected output format"
+    },
+    "background": {
+      "type": "string",
+      "enum": [
+        "white",
+        "light_gray",
+        "soft_blue"
+      ],
+      "default": "white",
+      "description": "Background color choice"
+    },
+    "professional_score": {
+      "type": "number",
+      "description": "AI professional readiness score 0-100"
+    },
+    "analysis": {
+      "type": "string",
+      "description": "AI analysis of the photo"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "uploading",
+        "processing",
+        "completed",
+        "failed"
+      ],
+      "default": "uploading"
+    }
+  },
+  "required": [
+    "original_url"
+  ]
+}
