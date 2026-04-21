@@ -4,14 +4,14 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { imageUrl, maskUrl, prompt } = req.body;
+    const { imageUrl } = req.body || {};
 
     return res.status(200).json({
       success: true,
-      imageUrl,
-      maskUrl,
-      prompt,
-      message: "API connected successfully",
+      url:
+        imageUrl ||
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
+      message: "Mock edit complete",
     });
   } catch (error) {
     return res.status(500).json({
